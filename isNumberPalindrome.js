@@ -27,27 +27,20 @@ Steps
 const isNumberPalindrome = (number) => {
   // copy input number to build reversed number
   var copy = number;
-  var reversed = 1;
+  var reversed = 0;
+  var digit;
   // init reversed number and digit
   // iterate until copy is 0 or less
 
-  while (copy <= 0){
+  while (copy > 0){
     // current digit is copy % 10
-    var digit = copy % 10;
+    digit = copy % 10;
 
     // multiply reversed number by 10 and add the digit
     reversed = reversed * 10 + digit;
 
     // divide the number copy by 10 and remove decimals
-    copy = copy / 10;
+    copy = Math.floor(copy / 10);
   }
-
-  console.log(reversed);
-  console.log(number)
-  console.log(copy);
-
-
   return reversed === number;
-}
-
-isNumberPalindrome(1331)
+};
